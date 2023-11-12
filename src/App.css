@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background-color: #00896f;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid black;
 }
 
 .App-logo {
@@ -12,6 +17,9 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+
+
 
 .App-header {
   background-color: #282c34;
@@ -35,4 +43,40 @@
   to {
     transform: rotate(360deg);
   }
+}
+.bbox{
+  text-align: center;
+  border: 2px solid black;
+
+}
+
+.box{
+  background-color: white;
+  /* width: 80%; */
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid black;
+  /* display: block; */
+}
+
+.Slider{
+  margin-left:auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.container{
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: grid;
+  grid-template-columns:  repeat(11, 1fr);
+
+  gap:10px;
+}
+
+
+#elem{
+  background-color: #fefedf; 
+  align-self: end;
+  gap: 10px;
 }
