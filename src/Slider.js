@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 
 function Slider({onSliderChange}){
-    const [sliderValue, setSliderValue] = useState(10);
+    const [sliderValue, setSliderValue] = useState(20);
 
     const SliderValChanged = (event) =>{
         const newVal = event.target.value;
@@ -18,7 +18,7 @@ function Slider({onSliderChange}){
             <input
               type="range"
               min="7"
-              max="30"
+              max="35"
               step="1"
               value={sliderValue}
               onChange={SliderValChanged}

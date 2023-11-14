@@ -1,3 +1,7 @@
+body{
+  background-color: #f3eada;
+}
+
 .App {
   text-align: center;
   background-color: #00896f;
@@ -75,8 +79,23 @@
 }
 
 
-#elem{
+.elem{
   background-color: #fefedf; 
   align-self: end;
   gap: 10px;
+}
+
+.elemCurr{
+  background-color: red;
+  align-self: end;
+  gap: 10px;
+}
+
+
+#curr{
+  background-color: red !important;
+}
+
+#toSwap{
+  background-color: green;
 }

@@ -1,22 +1,28 @@
 import './App.css';
 import {useEffect, useState} from 'react'
 import Bar from './Bar'
-import {RangeStepInput} from 'react-range-step-input';
+// import {RangeStepInput} from 'react-range-step-input';
 import Slider from './Slider'
+import bubbleSort from './BubbleSort';
 // const size = 10;
 
 function App() {
-  var [arr, setArr] = useState([10,9,20,8,7,6,5,4,3,2,1]);
+  var [arr, setArr] = useState([10,9,20,8,7,6,5,4,14,2,1,10,12,18,8,2,5,7,1,8]);
+  var [cls, setCls] = useState([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
   // var [sizeArr, setSize] = useState(10);
+
   function sizeArr(size_)
   {
     var tempArr = new Array(size_);
+    var clsArr = new Array(size_);
     for(var i = 0; i < size_; i++)
     {
+      clsArr[i] = 0;
       tempArr[i] = Math.random();
       tempArr[i] = Math.floor((tempArr[i] *1000))%20 + 1;
     }
-    setArr(tempArr)
+    setCls(clsArr);
+    setArr(tempArr);
   }
 
   function Sleep(ms)
@@ -24,31 +30,12 @@ function App() {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  async function sort()
-  {
-    const arrCopy = [...arr];
-    const n = arrCopy.length;
-
-    for (let i = 0; i < n - 1; i++) {
-      for (let j = 0; j < n - 1 - i; j++)
-        {
-          if(arrCopy[j] > arrCopy[j + 1]){
-            const temp = arrCopy[j];
-            arrCopy[j] =  arrCopy[j + 1];
-            arrCopy[j + 1] = temp;
-            setArr([...arrCopy]);
-            await Sleep(50);
-          }
-        }
-      }
-  }
 
   useEffect(() => {
     console.log("asdasd");
   },[arr]);
 
-  
-
+  // var sort = bubbleSort(_arr = arr, _cls = cls, _setCls = setCls)
   return (
     <>
 
@@ -56,10 +43,10 @@ function App() {
           {/* <RangeStepInput /> */}
           <div className="App">
           {/* <Slider></Slider> */}
-          <Bar arr={arr} /> 
+          <Bar arr={arr} clsarr = {cls} /> 
           </div>
 
-      <button type="button" className="btn btn-primary" style = {{"display" : "grid","margin" : "auto", "margin-top" : "10px"}} onClick={sort}>SORT</button>
+      <button type="button" className="btn btn-primary" style = {{"display" : "grid","margin" : "auto", "margin-top" : "10px"}} onClick={bubbleSort.bind(null, arr, setArr, cls, setCls)}>SORT</button>
     </>
   );
 }
