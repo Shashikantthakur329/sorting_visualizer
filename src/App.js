@@ -5,6 +5,8 @@ import Bar from './Bar'
 import Slider from './Slider'
 import bubbleSort from './algos/BubbleSort';
 import mergeSort from './algos/mergeSort';
+import quickSort from './algos/quickSort';
+import selectionSort from './algos/selectionSort';
 // const size = 10;
 
 function App() {
@@ -47,8 +49,10 @@ function App() {
           <Bar arr={arr} clsarr = {cls} /> 
           </div>
 
-      <button type="button" className="btn btn-primary" style = {{"display" : "grid","margin" : "auto", "margin-top" : "10px"}} onClick={bubbleSort.bind(null, arr, setArr, cls, setCls)}>SORT</button>
+      <button type="button" className="btn btn-primary" style = {{"display" : "grid","margin" : "auto", "margin-top" : "10px"}} onClick={bubbleSort.bind(null, arr, setArr, cls, setCls)}>BUBBLE_SORT</button>
       <button type="button" className="btn btn-primary" style = {{"display" : "grid","margin" : "auto", "margin-top" : "10px"}} onClick={mergeSort.bind(null, arr, setArr, cls, setCls)}>MERGE_SORT</button>
+      <button type="button" className="btn btn-primary" style = {{"display" : "grid","margin" : "auto", "margin-top" : "10px"}} onClick={quickSort.bind(null, arr, setArr, cls, setCls)}>QUICK_SORT</button>
+      <button type="button" className="btn btn-primary" style = {{"display" : "grid","margin" : "auto", "margin-top" : "10px"}} onClick={selectionSort.bind(null, arr, setArr, cls, setCls)}>SELECTION_SORT</button>
     </>
   );
 }

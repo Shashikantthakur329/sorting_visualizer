@@ -18,7 +18,7 @@ function Slider({onSliderChange}){
             <input
               type="range"
               min="7"
-              max="35"
+              max="55"
               step="1"
               value={sliderValue}
               onChange={SliderValChanged}

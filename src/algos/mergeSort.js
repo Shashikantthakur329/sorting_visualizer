@@ -36,18 +36,24 @@ async function mergeSort(arr, _setArr, cls, setCls)
                 j++;
             }
             k++;
+            _setArr([...arr]);
+            await Sleep(20);
         }
 
         while (i < n1) {
             arr[k] = L[i];
             i++;
             k++;
+            _setArr([...arr]);
+            await Sleep(20);
         }
 
         while (j < n2) {
             arr[k] = R[j];
             j++;
             k++;
+            _setArr([...arr]);
+            await Sleep(20);
         }
     }
 
@@ -61,14 +67,13 @@ async function mergeSort(arr, _setArr, cls, setCls)
         await mergesort(arr,m+1,r);
         
         await merge(arr,l,m,r);
-        _setArr([...arr]);
-        await Sleep(100);
+        // _setArr([...arr]);
+        // await Sleep(100);
     }
     var arr_size = arr.length;
     var temparr = [...arr];
-    
+
     mergesort(temparr, 0, arr_size - 1);
 }
-
 
 export default mergeSort;
