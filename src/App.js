@@ -3,7 +3,8 @@ import {useEffect, useState} from 'react'
 import Bar from './Bar'
 // import {RangeStepInput} from 'react-range-step-input';
 import Slider from './Slider'
-import bubbleSort from './BubbleSort';
+import bubbleSort from './algos/BubbleSort';
+import mergeSort from './algos/mergeSort';
 // const size = 10;
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           </div>
 
       <button type="button" className="btn btn-primary" style = {{"display" : "grid","margin" : "auto", "margin-top" : "10px"}} onClick={bubbleSort.bind(null, arr, setArr, cls, setCls)}>SORT</button>
+      <button type="button" className="btn btn-primary" style = {{"display" : "grid","margin" : "auto", "margin-top" : "10px"}} onClick={mergeSort.bind(null, arr, setArr, cls, setCls)}>MERGE_SORT</button>
     </>
   );
 }
