@@ -31,7 +31,7 @@ async function quickSort(arr, _setArr, cls, setCls)
         }
         return i;
     }
-
+    var tempcls = [...cls];
     async function quicksort(items, left, right) {
         var index;
         if (items.length > 1) {
@@ -43,6 +43,12 @@ async function quickSort(arr, _setArr, cls, setCls)
                 await quicksort(items, index, right);
             }
         }
+
+        for(var i = left; i <= right; i++)
+        {
+            tempcls[i] = 1;
+        }
+        setCls([...tempcls]);
         return items;
     }
     // first call to quick sort
